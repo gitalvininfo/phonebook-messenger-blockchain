@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/app.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+
+  <h1>Chatwei (lite)</h1><br>
+  <h2>The Ethereum Messenger</h2>
+  <hr style="border: 1px solid black; margin-top: -5px;" />
+
+  <label>Contract Address</label><br>
+  <a target="_blank" type="addressLinks" id="contractAddress" spellcheck="false">Could not load</a>
+  <br> <br>
+
+  <label>Contract Owner</label><br>
+  <a target="_blank" type="addressLinks" id="contractOwner" spellcheck="false">Could not load</a>
+  <br> <br>
+
+  <label>Your Ethereum Address</label><br>
+  <a target="_blank" type="addressLinks" id="myAddress" spellcheck="false">Could not load</a> <br> <br>
+
+  <label>Your Balance</label><br>
+  <textarea type="mySimpleLabel" id="myBalance" spellcheck="false">0 Ether</textarea>
+  <br> <br>
+
+  <br>
+  <label for="">User directory:</label><br>
+  <input type="myDefaultButton" value="Copy" onclick="App.copyAddressToSend()" style="float: right" />
+  <div style="overflow: hidden; padding-right: 10px;">
+    <select type="registeredUsersAddressMenu" id="registeredUsersAddressMenu"></select>
+  </div>
+
+  <br>
+
+  <label for="">Send to: </label><br>
+  <textarea style="width: 95%;" type="myInputTextArea" id="receiver" spellcheck="false" maxlength="42" rows="1"></textarea>
+  <br><br>
+
+  <br><label for="">Message</label><br>
+  <input type="myDefaultButton" id="sendMessageButton" value="Send" onclick="App.sendMessage()" style="float: right;" />
+  <div style="overflow: hidden; padding-right: 10px;">
+    <textarea type="messageTextArea" id="message" maxlength="30" rows="1"></textarea>
+  </div>
+
+  <div id="receivedTable" style="display: none">
+    <br><label for="">Received</label><br>
+    <input type="myDefaultButton" id="replyButton" value="Reply" onclick="App.replyToMessage()" style="float: right;" />
+    <div style="overflow: hidden; padding-right: 10px;">
+      <textarea type="messageTextArea" id="reply"></textarea>
+    </div>
+    <br>
+    <table id="mytable" style="margin-top: -5px;">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>From</th>
+          <th style="display: none;">Content</th>
+        </tr>
+      </thead>
+
+      <tbody id="mytable-body">
+
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <label for="">Status</label><br>
+  <span id="status"
+    style="overflow: hidden; word-wrap: break-word; display: inline-block; white-space: pre-wrap; font-size: 12px; color: red;">Welcome
+    to Chatwei</span>
+
+</body>
+
+</html>
